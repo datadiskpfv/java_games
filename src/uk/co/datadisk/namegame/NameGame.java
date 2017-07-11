@@ -10,8 +10,17 @@ public class NameGame extends DIYWindow {
     public NameGame() {
         print("Enter your name: ");
         String name = input();
-        print("");
+        while(!name.equals("quit")) {
+            checkName(name);
+            print("");
+            print("Enter your name: ");
+            name = input();
+            print("");
+        }
+        print("Thank you for playing the game.");
+    }
 
+    public void checkName(String name) {
         print(name + " be nimble");
         print(name + " be quick");
         print(name + " jump over a candlestick.");
