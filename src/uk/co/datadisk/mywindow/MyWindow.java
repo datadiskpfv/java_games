@@ -40,4 +40,29 @@ public class MyWindow extends DIYWindow {
         return s;
     }
 
+    protected boolean promptForYesNo(String prompt) {
+
+        boolean yes = true;
+        boolean valid = false;
+
+        while(!valid) {
+            String answer = promptForString(prompt);
+            switch (answer) {
+                case "Y":
+                case "y":
+                    yes = true;
+                    valid = true;
+                    break;
+                case "N":
+                case "n":
+                    yes = false;
+                    valid = true;
+                    break;
+                default:
+                    print(answer + " is an invalid option");
+            }
+        }
+        return yes;
+    }
+
 }
