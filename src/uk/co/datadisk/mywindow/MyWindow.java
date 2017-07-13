@@ -36,12 +36,11 @@ public class MyWindow extends DIYWindow {
 
     protected String promptForString(String prompt) {
         print(prompt);
-        String s = input();
-        return s;
+        //String s = input();
+        return input();
     }
 
     protected boolean promptForYesNo(String prompt) {
-
         boolean yes = true;
         boolean valid = false;
 
@@ -64,5 +63,4 @@ public class MyWindow extends DIYWindow {
         }
         return yes;
     }
-
 }
