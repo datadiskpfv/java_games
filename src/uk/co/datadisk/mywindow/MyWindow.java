@@ -63,4 +63,26 @@ public class MyWindow extends DIYWindow {
         }
         return yes;
     }
+
+    public String replaceStringAt(String originalString, int index, String replaceString) {
+        String newString = originalString;
+
+        int roomAvailable = originalString.length() - index;
+        if(replaceString.length() > roomAvailable) {
+            replaceString = replaceString.substring(0, roomAvailable);
+        }
+
+        if (index < originalString.length()) {
+            String firstString = originalString.substring(0, index);
+            String secondString = originalString.substring(index + replaceString.length());
+
+            System.out.println("firstString: " + firstString);
+            System.out.println("secondString: " + secondString);
+            System.out.println("replaceString: " + replaceString);
+
+            newString = firstString + replaceString + secondString;
+        }
+
+        return newString;
+    }
 }
