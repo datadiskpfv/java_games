@@ -13,31 +13,31 @@ public class WordMasterMind extends MyWindow {
     private String word;
     private String clue;
 
+    private static final int NUMBEROFWORDS = 342;
+    private static final String FILENAME = "wordMasterMind.txt";
+
     public WordMasterMind() {
 
-        int numberOfWords = 342;
-        String words[] = new String[numberOfWords];
-
-        String fileName = "wordMasterMind.txt";
+        String words[] = new String[NUMBEROFWORDS];
         Random rand = new Random();
 
         int count = 1;
         boolean repeat = true;
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader(new File(fileName)));
-            for (int i = 0; i < numberOfWords; i++) {
+            BufferedReader in = new BufferedReader(new FileReader(new File(FILENAME)));
+            for (int i = 0; i < NUMBEROFWORDS; i++) {
                 words[i] = in.readLine();
             }
             in.close();
 
-            int pick = rand.nextInt(numberOfWords);
+            int pick = rand.nextInt(NUMBEROFWORDS);
             word = words[pick];
             word = word.toUpperCase();
         } catch (FileNotFoundException e) {
-            print("Error unable to open file " + fileName);
+            print("Error unable to open file " + FILENAME);
         } catch (IOException e) {
-            print("Error reading file " + fileName);
+            print("Error reading file " + FILENAME);
         }
 
         //String guess = "lint";
@@ -79,7 +79,7 @@ public class WordMasterMind extends MyWindow {
                 }
             }
 
-            int pick = rand.nextInt(numberOfWords);
+            int pick = rand.nextInt(NUMBEROFWORDS);
             word = words[pick];
             word = word.toUpperCase();
             print("OOOO");
