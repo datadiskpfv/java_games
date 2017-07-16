@@ -30,7 +30,7 @@ public class Card {
 
     public boolean isValid() {
         boolean valid = false;
-        if (suit == ' ') {
+        if (suit != ' ') {
             valid = true;
         }
         return valid;

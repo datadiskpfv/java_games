@@ -79,4 +79,8 @@ public class Hand {
         }
         return string;
     }
+
+    public ArrayList<Card> getHand() {
+        return cards;
+    }
 }
